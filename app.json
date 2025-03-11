@@ -20,7 +20,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.madlibs"
+      "package": "com.mkbaker28.madlibs"
     },
     "web": {
       "favicon": "./assets/favicon.png"
