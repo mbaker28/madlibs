@@ -6,15 +6,12 @@ export type RootStackParamList = {
 };
 
 export type WordInput = {
-	type: WordType;
+	type: string;
 	text: string;
 };
-
-export type WordType = 'noun' | 'verb' | 'adjective' | 'adverb';
 
 export type StoryTemplate = {
 	id: number;
 	title: string;
 	template: string;
-	placeholders: WordType[]
 };

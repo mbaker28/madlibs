@@ -4,16 +4,8 @@ import AppNavigator from "./src/navigation/AppNavigator";
 
 const App: React.FC = () => {
 	return (
-		<SafeAreaView style={styles.container}>
-			<AppNavigator />
-		</SafeAreaView>
+		<AppNavigator />
 	);
 };
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1
-	}
-});
 
 export default App;
