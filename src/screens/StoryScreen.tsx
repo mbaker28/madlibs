@@ -27,7 +27,7 @@ const StoryScreen: React.FC<StoryScreenProps> = ({ route, navigation }) => {
 
 	return (
 		<SafeAreaView style={globalStyles.container}>
-			<ScrollView style={styles.container} contentContainerStyle={styles.contentConainer}>
+			<ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 				<Text style={{ ...styles.title, color: colors.text }}>{selectedStory.title}</Text>
 				<Text style={{ ...styles.storyText, color: colors.text }}>{filledStory}</Text>
 				<CustomButton title="Back to Home" onPress={() => navigation.navigate('Home')} />
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		padding: 20
 	},
-	contentConainer: {
+	contentContainer: {
 		flexGrow: 1,
 		justifyContent: 'center',
 		alignItems: 'center'

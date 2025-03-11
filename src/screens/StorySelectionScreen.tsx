@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, Button, StyleSheet, ScrollView } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types";
 import { stories } from "../data/stories";
@@ -14,20 +14,32 @@ const StorySelectionScreen: React.FC<StorySelectionScreenProps> = ({ navigation 
 
 	return (
 		<View style={globalStyles.container}>
-			<Text style={{ ...styles.title, color: colors.text }}>Choose a Story</Text>
-			{stories.map(story => (
-				<CustomButton
-					key={story.id}
-					title={story.title}
-					onPress={() => navigation.navigate('Input', { storyId: story.id })}
-				/>
-			))}
-			<CustomButton title="Go Home" onPress={() => navigation.navigate('Home')} />
+			<ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+				<View>
+					<Text style={{ ...styles.title, color: colors.text }}>Choose a Story</Text>
+				</View>
+				{stories.map(story => (
+					<CustomButton
+						key={story.id}
+						title={story.title}
+						onPress={() => navigation.navigate('Input', { storyId: story.id })}
+					/>
+				))}
+				<CustomButton title="Go Home" onPress={() => navigation.navigate('Home')} />
+			</ScrollView>
 		</View>
 	);
 }
 
 const styles = StyleSheet.create({
+	container: {
+		flex: 1
+	},
+	contentContainer: {
+		flexGrow: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
 	title: {
 		fontSize: 24,
 		fontWeight: 'bold',
