@@ -25,21 +25,28 @@ const InputScreen: React.FC<InputScreenProps> = ({ navigation, route }) => {
 		}
 	};
 
+	const handlePrev = () => {
+		setInputIndex(inputIndex - 1);
+	};
+
 	const handleChange = (text: string) => {
 		const currentPlaceholder = selectedStory.placeholders[inputIndex];
-		inputs.push({ type: currentPlaceholder, text });
-		setInputs(inputs);
+		const newInputs = [...inputs];
+		newInputs[inputIndex] = { type: currentPlaceholder, text };
+
+		setInputs(newInputs);
 	};
 
 	return (
 		<View style={styles.container}>
-			<Text style={styles.label}>Enter a {selectedStory.placeholders[inputIndex]}:</Text>
+			<Text style={styles.label}>Enter a(n) {selectedStory.placeholders[inputIndex]}:</Text>
 			<TextInput
 				style={styles.input}
 				onChangeText={handleChange}
 				value={inputs[inputIndex]?.text || ''}
 			/>
-			<Button title="Next" onPress={handleNext} />
+			<Button title="Previous" disabled={inputIndex === 0} onPress={handlePrev} />
+			<Button title={inputIndex === selectedStory.placeholders.length - 1 ? 'Create Story' : 'Next'} onPress={handleNext} />
 		</View>
 	);
 };
