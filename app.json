@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "madlibs",
-    "slug": "madlibs",
+    "slug": "mad-libs",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,6 +24,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ce3bd3e7-4b08-49b7-a0ca-f0c349527dcc"
+      }
+    },
+    "owner": "mkbaker28"
   }
 }
